@@ -33,6 +33,11 @@ VOLUME ${APP_ROOT}/logs ${APP_ROOT}/data
 
 COPY * .
 
+RUN python3.9 -m venv venv && source venv/bin/activate 
+RUN source venv/bin/activate && pip3 install pip -U
+# RUN pip3 install ray[client] torch torchvision
+
+
 ### Just wait forever. Allows this container to act as a debugging tool.
 # CMD /usr/bin/tail -f /dev/null
-CMD python3 -m http.server 8080
+CMD python3.9 -m http.server 8080
