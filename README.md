@@ -15,6 +15,7 @@ podman push quay.io/bkozdemb/hello
 Create a python 3.8 env and install ray[client]==2.9.0
 
 ```bash
+export RAY_ADDRESS="ray://raycluster-kuberay-head-svc:10001"
 python -c 'import ray;ray.init(address="ray://raycluster-kuberay-head-svc:10001");print(ray.cluster_resources())'
 ```
 
