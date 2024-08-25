@@ -31,7 +31,7 @@ WORKDIR ${APP_ROOT}
 
 VOLUME ${APP_ROOT}/logs ${APP_ROOT}/data
 
-COPY index.html .
+COPY * .
 
 ### Just wait forever. Allows this container to act as a debugging tool.
 # CMD /usr/bin/tail -f /dev/null
